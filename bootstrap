@@ -41,7 +41,7 @@ then
   echo "Installing dependencies with apt-get"
   sudo apt-add-repository universe
   sudo apt-get update
-  sudo apt-get install -y --fix-missing libchm1 clamav upx wireshark
+  sudo apt-get install -y --fix-missing libchm1 libchm-dev clamav upx wireshark
   sudo ldconfig
 
 # Redhat: Install as many dependencies as we can using yum.
@@ -60,7 +60,7 @@ then
     echo "Installation for OSX requires Homebrew. Please visit http://brew.sh/."
     exit
   }
-  brew install chmlib clamav wireshark upx
+  brew install chmlib clamav wireshark upx yara
 elif [ "$OS" = 'freebsd' ]
 then
   echo "Installing ports"
